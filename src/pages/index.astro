@@ -26,7 +26,102 @@
         <a href="https://github.com/martinigoyanes">GitHub</a>
         <a href="https://www.linkedin.com/in/miglesia/">LinkedIn</a>
       </nav>
+
+      <div class="columns">
+        <section class="section">
+          <h2>Talks</h2>
+          <ul class="entry-list is-collapsible" data-limit="4">
+            <li class="entry">
+              <span class="entry-title">Trillion-Token Pretraining: Building a Foundational Model for Payment Data</span>
+              <span class="entry-meta">PyData Amsterdam · Amsterdam · Sep 2026</span>
+            </li>
+            <li class="entry">
+              <span class="entry-title">
+                <a href="https://www.youtube.com/watch?app=desktop&v=S7rVHuaBVXY">Building a Tabular Foundational Model</a>
+              </span>
+              <span class="entry-meta">Anyscale Summit 2026 · San Francisco · Aug 2026</span>
+            </li>
+            <li class="entry">
+              <span class="entry-title">
+                <a href="https://www.anyscale.com/blog/ray-day-london-recap">Ray @ Adyen</a>
+              </span>
+              <span class="entry-meta">Ray Day London, Anyscale · London · Jun 2026</span>
+            </li>
+            <li class="entry">
+              <span class="entry-title">How AI is Transforming Financial Services</span>
+              <span class="entry-meta">Adyen &amp; BBVA · Madrid · May 2026</span>
+            </li>
+            <li class="entry">
+              <span class="entry-title">Using LLM-based Algorithms in Fintech</span>
+              <span class="entry-meta">Elastic Meetup · Amsterdam · Sep 2025</span>
+            </li>
+            <li class="entry">
+              <span class="entry-title">Operational Efficiency with LLMs</span>
+              <span class="entry-meta">PyData Madrid · Madrid · Feb 2024</span>
+            </li>
+          </ul>
+          <button type="button" class="toggle-btn" data-toggle-list aria-expanded="false">
+            Show more
+          </button>
+        </section>
+
+        <section class="section">
+          <h2>Publications &amp; Articles</h2>
+          <ul class="entry-list is-collapsible" data-limit="4">
+            <li class="entry">
+              <span class="entry-title">DABstep: Data Agent Benchmark for Multi-step Reasoning</span>
+              <span class="entry-meta">A. Egg, M. Iglesias, A. Mora, F. Kingma, T. Wolf, L. Von Werra · 2025</span>
+              <span class="entry-links">
+                <a href="https://arxiv.org/abs/2506.23719">arXiv</a>
+                <a href="https://huggingface.co/blog/dabstep">Hugging Face</a>
+                <a href="https://openreview.net/forum?id=E0xUHr3iP8">OpenReview</a>
+              </span>
+            </li>
+            <li class="entry">
+              <span class="entry-title">LLM Inference at Scale</span>
+              <span class="entry-meta">M. Iglesias · 2024</span>
+              <span class="entry-links">
+                <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi">Hugging Face</a>
+                <a href="https://www.adyen.com/knowledge-hub/llm-inference-at-scale-with-tgi">Adyen</a>
+              </span>
+            </li>
+            <li class="entry">
+              <span class="entry-title">
+                <a href="https://www.mdpi.com/2076-3417/13/15/8590">A Toxic Style Transfer Method based on the DRG Framework Exploiting Toxic Lexicon Semantic Similarity</a>
+              </span>
+              <span class="entry-meta">M. Iglesias, C.A. Iglesias, O. Araque · 2023</span>
+            </li>
+            <li class="entry">
+              <span class="entry-title">
+                <a href="https://www.researchgate.net/publication/353287610_Dimensional_and_Discrete_Emotion_Recognition_using_Multi-task_Learning_from_Acoustic_and_Linguistic_features_extracted_from_Speech">Dimensional and Discrete Emotion Recognition using Multi-task Learning</a>
+              </span>
+              <span class="entry-meta">M. Iglesias, A. Artes · 2021</span>
+            </li>
+          </ul>
+          <button type="button" class="toggle-btn" data-toggle-list aria-expanded="false">
+            Show more
+          </button>
+        </section>
+      </div>
     </main>
+
+    <script>
+      const toggles = document.querySelectorAll<HTMLButtonElement>('[data-toggle-list]');
+      toggles.forEach((button) => {
+        const list = button.previousElementSibling as HTMLUListElement | null;
+        if (!list) return;
+        const limit = Number(list.dataset.limit ?? '4');
+        if (list.children.length <= limit) {
+          button.remove();
+          return;
+        }
+        button.addEventListener('click', () => {
+          const expanded = list.classList.toggle('is-expanded');
+          button.setAttribute('aria-expanded', String(expanded));
+          button.textContent = expanded ? 'Show less' : 'Show more';
+        });
+      });
+    </script>
   </body>
 </html>
 
@@ -50,7 +145,8 @@
   }
 
   main {
-    max-width: 36rem;
+    width: 100%;
+    max-width: 64rem;
     padding: 2rem;
     text-align: center;
   }
@@ -93,5 +189,131 @@
   .links a:hover {
     border-color: #4b5568;
     background: #1a1e26;
+  }
+
+  .columns {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .section {
+    text-align: left;
+  }
+
+  .section h2 {
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8b93a7;
+    border-bottom: 1px solid #2a2f3a;
+    padding-bottom: 0.5rem;
+  }
+
+  .entry-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .entry-title {
+    color: #e6e8ee;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .entry-title a {
+    color: #e6e8ee;
+    text-decoration: none;
+    border-bottom: 1px solid #4b5568;
+  }
+
+  .entry-title a:hover {
+    color: #fff;
+    border-color: #8b93a7;
+  }
+
+  .entry-meta {
+    color: #8b93a7;
+    font-size: 0.85rem;
+  }
+
+  .entry-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.15rem;
+  }
+
+  .entry-links a {
+    color: #a9c4ff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid #33517f;
+    background: rgba(91, 140, 255, 0.1);
+    transition: border-color 0.15s, background 0.15s, color 0.15s;
+  }
+
+  .entry-links a:hover {
+    color: #fff;
+    border-color: #5b8cff;
+    background: rgba(91, 140, 255, 0.22);
+  }
+
+  .toggle-btn {
+    display: none;
+    margin-top: 1rem;
+    background: none;
+    border: 1px solid #2a2f3a;
+    color: #8b93a7;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+
+  .toggle-btn:hover {
+    color: #e6e8ee;
+    border-color: #4b5568;
+    background: #1a1e26;
+  }
+
+  /* Tablet and below: stack the two sections into a single column. */
+  @media (max-width: 760px) {
+    .columns {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  /* Small devices: show only a preview of each list, with a button to expand it. */
+  @media (max-width: 640px) {
+    .toggle-btn {
+      display: inline-block;
+    }
+
+    .entry-list.is-collapsible .entry:nth-child(n + 5) {
+      display: none;
+    }
+
+    .entry-list.is-collapsible.is-expanded .entry:nth-child(n + 5) {
+      display: flex;
+    }
   }
 </style>
