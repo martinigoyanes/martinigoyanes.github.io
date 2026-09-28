@@ -36,15 +36,21 @@
               <span class="entry-meta">PyData Amsterdam · Amsterdam · Sep 2026</span>
             </li>
             <li class="entry">
-              <span class="entry-title">
-                <a href="https://www.youtube.com/watch?app=desktop&v=S7rVHuaBVXY">Building a Tabular Foundational Model</a>
-              </span>
+              <div class="entry-head">
+                <span class="entry-title">Building a Tabular Foundational Model</span>
+                <span class="entry-links">
+                  <a href="https://www.youtube.com/watch?app=desktop&v=S7rVHuaBVXY">YouTube</a>
+                </span>
+              </div>
               <span class="entry-meta">Anyscale Summit 2026 · San Francisco · Aug 2026</span>
             </li>
             <li class="entry">
-              <span class="entry-title">
-                <a href="https://www.anyscale.com/blog/ray-day-london-recap">Ray @ Adyen</a>
-              </span>
+              <div class="entry-head">
+                <span class="entry-title">Ray @ Adyen</span>
+                <span class="entry-links">
+                  <a href="https://www.anyscale.com/blog/ray-day-london-recap">Link</a>
+                </span>
+              </div>
               <span class="entry-meta">Ray Day London, Anyscale · London · Jun 2026</span>
             </li>
             <li class="entry">
@@ -69,32 +75,42 @@
           <h2>Publications &amp; Articles</h2>
           <ul class="entry-list is-collapsible" data-limit="4">
             <li class="entry">
-              <span class="entry-title">DABstep: Data Agent Benchmark for Multi-step Reasoning</span>
+              <div class="entry-head">
+                <span class="entry-title">DABstep: Data Agent Benchmark for Multi-step Reasoning</span>
+                <span class="entry-links">
+                  <a href="https://arxiv.org/abs/2506.23719">arXiv</a>
+                  <a href="https://huggingface.co/blog/dabstep">Hugging Face</a>
+                  <a href="https://openreview.net/forum?id=E0xUHr3iP8">OpenReview</a>
+                </span>
+              </div>
               <span class="entry-meta">A. Egg, M. Iglesias, A. Mora, F. Kingma, T. Wolf, L. Von Werra · 2025</span>
-              <span class="entry-links">
-                <a href="https://arxiv.org/abs/2506.23719">arXiv</a>
-                <a href="https://huggingface.co/blog/dabstep">Hugging Face</a>
-                <a href="https://openreview.net/forum?id=E0xUHr3iP8">OpenReview</a>
-              </span>
             </li>
             <li class="entry">
-              <span class="entry-title">LLM Inference at Scale</span>
+              <div class="entry-head">
+                <span class="entry-title">LLM Inference at Scale</span>
+                <span class="entry-links">
+                  <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi">Hugging Face</a>
+                  <a href="https://www.adyen.com/knowledge-hub/llm-inference-at-scale-with-tgi">Link</a>
+                </span>
+              </div>
               <span class="entry-meta">M. Iglesias · 2024</span>
-              <span class="entry-links">
-                <a href="https://huggingface.co/blog/martinigoyanes/llm-inference-at-scale-with-tgi">Hugging Face</a>
-                <a href="https://www.adyen.com/knowledge-hub/llm-inference-at-scale-with-tgi">Adyen</a>
-              </span>
             </li>
             <li class="entry">
-              <span class="entry-title">
-                <a href="https://www.mdpi.com/2076-3417/13/15/8590">A Toxic Style Transfer Method based on the DRG Framework Exploiting Toxic Lexicon Semantic Similarity</a>
-              </span>
+              <div class="entry-head">
+                <span class="entry-title">A Toxic Style Transfer Method based on the DRG Framework Exploiting Toxic Lexicon Semantic Similarity</span>
+                <span class="entry-links">
+                  <a href="https://www.mdpi.com/2076-3417/13/15/8590">Link</a>
+                </span>
+              </div>
               <span class="entry-meta">M. Iglesias, C.A. Iglesias, O. Araque · 2023</span>
             </li>
             <li class="entry">
-              <span class="entry-title">
-                <a href="https://www.researchgate.net/publication/353287610_Dimensional_and_Discrete_Emotion_Recognition_using_Multi-task_Learning_from_Acoustic_and_Linguistic_features_extracted_from_Speech">Dimensional and Discrete Emotion Recognition using Multi-task Learning</a>
-              </span>
+              <div class="entry-head">
+                <span class="entry-title">Dimensional and Discrete Emotion Recognition using Multi-task Learning</span>
+                <span class="entry-links">
+                  <a href="https://www.researchgate.net/publication/353287610_Dimensional_and_Discrete_Emotion_Recognition_using_Multi-task_Learning_from_Acoustic_and_Linguistic_features_extracted_from_Speech">Link</a>
+                </span>
+              </div>
               <span class="entry-meta">M. Iglesias, A. Artes · 2021</span>
             </li>
           </ul>
@@ -228,21 +244,17 @@
     gap: 0.3rem;
   }
 
+  .entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
   .entry-title {
     color: #e6e8ee;
     font-weight: 500;
     line-height: 1.4;
-  }
-
-  .entry-title a {
-    color: #e6e8ee;
-    text-decoration: none;
-    border-bottom: 1px solid #4b5568;
-  }
-
-  .entry-title a:hover {
-    color: #fff;
-    border-color: #8b93a7;
   }
 
   .entry-meta {
@@ -251,10 +263,9 @@
   }
 
   .entry-links {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.15rem;
+    gap: 0.4rem;
   }
 
   .entry-links a {
